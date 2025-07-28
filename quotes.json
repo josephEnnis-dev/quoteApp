@@ -18,5 +18,17 @@
     {
         "quote": "Apples are delicious",
         "author": "Joseph Ennis"
+    },
+    {
+        "quote": "I like pretty apples",
+        "author": "Chloe Noble"
+    },
+    {
+        "quote": "Does it work?",
+        "author": "Joseph Ennis"
+    },
+    {
+        "quote": "It does!",
+        "author": "Greg Heffley"
     }
 ]

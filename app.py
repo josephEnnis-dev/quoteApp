@@ -1,9 +1,10 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash
 import random
 import json
 import os
 
 app = Flask(__name__)
+app.secret_key = 'supersecretkey'
 DATA_FILE = 'quotes.json'
 
 def load_quotes():
@@ -31,6 +32,7 @@ def submit():
         author = request.form.get("author")
         if quote and author:
             save_quote({"quote": quote, "author": author})
+            flash("Quote submitted successfully!", "success")
             return redirect(url_for('quote'))
     return render_template("submit.html")
 

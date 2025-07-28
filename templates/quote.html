@@ -3,25 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <title>Quote of the Day</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 100px;
-        }
-        .quote {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        .author {
-            font-size: 18px;
-            color: #555;
-        }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <div class="quote">“{{ quote }}”</div>
-    <div class="author">— {{ author }}</div>
-    <a href="{{ url_for('submit') }}">Submit a Quote</a>
+<body class="bg-light">
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{{ url_for('quote') }}">QuoteApp</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link {% if request.endpoint == 'quote' %}active{% endif %}" href="{{ url_for('quote') }}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if request.endpoint == 'submit' %}active{% endif %}" href="{{ url_for('submit') }}">Submit</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Flash Message -->
+<div class="container text-center mt-5">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="mt-3">
+          {% for category, message in messages %}
+            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+              {{ message }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    <div class="card shadow-lg p-4">
+        <h1 class="mb-4">💡 Quote of the Day</h1>
+        <blockquote class="blockquote">
+            <p class="fs-4">“{{ quote }}”</p>
+            <footer class="blockquote-footer mt-2">{{ author }}</footer>
+        </blockquote>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
