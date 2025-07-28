@@ -3,8 +3,7 @@
 A simple, responsive web app built with **Flask** and **Bootstrap** that shows a random inspirational quote each time you visit. Users can also submit their own favorite quotes!
 
 ## Live Demo
-Coming soon — will be hosted on [Render.com](https://render.com)
-
+Hosted here: https://quoteapp-1z6f.onrender.com
 ## Screenshots
 
 Home Page | Submit Page
