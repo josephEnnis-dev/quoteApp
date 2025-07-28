@@ -11,8 +11,6 @@ Home Page | Submit Page
 :-------------------------:|:-------------------------:
 ![Home Screenshot](static/screenshots/home.png) | ![Submit Screenshot](static/screenshots/submit.png)
 
-*(Add your own screenshots inside a `/static/screenshots/` folder and update paths here)*
-
 ---
 
 ## Features
