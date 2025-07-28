@@ -1,11 +1,12 @@
 import random
 
 quotes = [
-    "Keep going. Everything you need will come to you at the perfect time.",
-    "Do something today that your future self will thank you for.",
-    "Believe you can and you're halfway there.",
-    "Dream big and dare to fail."
+    {"quote": "Keep going. Everything you need will come to you at the perfect time.", "author": "Unknown"},
+    {"quote": "Do something today that your future self will thank you for.", "author": "Sean Patrick Flanery"},
+    {"quote": "Believe you can and you're halfway there.", "author": "Theodore Roosevelt"},
+    {"quote": "Dream big and dare to fail.", "author": "Norman Vaughan"}
 ]
 
-print("Quote of the Day:")
-print(random.choice(quotes))
+selected = random.choice(quotes)
+print("💡 Quote of the Day:")
+print(f"{selected['quote']} — {selected['author']}")
