@@ -23,7 +23,7 @@ Home Page | Submit Page
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - **Python 3**
 - **Flask** (web framework)
