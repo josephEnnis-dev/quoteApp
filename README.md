@@ -33,7 +33,7 @@ Home Page | Submit Page
 
 ---
 
-## 🧑‍💻 How to Run Locally
+## How to Run Locally
 
 ```bash
 git clone https://github.com/josephEnnis-dev/quoteApp
